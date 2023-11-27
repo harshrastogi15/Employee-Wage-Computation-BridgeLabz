@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 class EmployeeWage {
     public static final int IS_FULL_TIME = 1;
     public static final int IS_PART_TIME = 2;
@@ -8,9 +10,8 @@ class EmployeeWage {
     public static int employeeCheck() {
         return (int) (Math.ceil(Math.random() * 10) % 3);
     }
-
-    public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage Computation Program");
+    // UC7 - Refactor the Code to write a Class Method to Compute Employee Wage
+    public static void computeWage(){
         int empHours=0, totalDays = 0;
         // UC6 - Calculate Wages till a condition of total working hours or days is reached for a month
         while(empHours<MAX_HOURS_IN_MONTH && totalDays<MONTHLY_WORKING_DAYS){
@@ -33,5 +34,10 @@ class EmployeeWage {
 
         int dailyWage = empHours * EMP_WAGE_PER_HOUR;
         System.out.println("Daily Wage: " + dailyWage);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to Employee Wage Computation Program");
+        computeWage();
     }
 }
